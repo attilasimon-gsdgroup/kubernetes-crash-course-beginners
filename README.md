@@ -503,6 +503,8 @@ kubectl get node
 kubectl get node -o wide
 ```
 
+Then access the app in the browser with `http://[minikube IP]:[webapp-service port]`, for example:  http://192.168.49.2:30100 
+
 ### Timeout issue on Windows
 
 On Windows (Docker Desktop driver), the minikube IP (e.g., 192.168.49.2) is **internal to Docker** and unreachable from host machine/browser.  
