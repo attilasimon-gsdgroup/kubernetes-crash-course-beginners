@@ -287,7 +287,7 @@ spec:
       - name: mongodb
         image: mongo:7.0
         ports:                    # which port? 
-        - containerPort: 21017
+        - containerPort: 27017
 ---                               # separates "Deployment" from "Service"
 apiVersion: v1
 kind: Service
@@ -298,8 +298,8 @@ spec:
     app: mongo                    # "label" of Pods belonging to Service 
   ports:
     - protocol: TCP
-      port: 21017                 # Service port - different or same as target
-      targetPort: 21017           # Pods port
+      port: 27017                 # Service port - different or same as target
+      targetPort: 27017           # Pods port
 ```
 
 → get image name, tag and port from official docker hub page: [Mongo](https://hub.docker.com/_/mongo)  
@@ -356,7 +356,7 @@ Take variable names from [official docker hub page](https://hub.docker.com/_/mon
       - name: mongodb
         image: mongo:7.0
         ports:                    
-        - containerPort: 21017
+        - containerPort: 27017
         env:                      # environment variables for container
         - name: MONGO_INITDB_ROOT_USERNAME # name taken from Mongo cont. docs
           valueFrom: 
