@@ -503,4 +503,23 @@ kubectl get node
 kubectl get node -o wide
 ```
 
-#### Expose minikube ports on Windows
+### Timeout issue on Windows
+
+On Windows (Docker Desktop driver), the minikube IP (e.g., 192.168.49.2) is **internal to Docker** and unreachable from host machine/browser.  
+Direct access like http://192.168.49.2:30100 times out — normal behavior, not a bug.
+
+**Solutions (pick one):**
+1. **Use minikube command** :  
+   ```
+   minikube service webapp-service
+   ```
+   - Opens browser to http://127.0.0.1:[random-port] via tunnel
+   - check terminal for details
+   - more info: [Accessing minikube apps](https://minikube.sigs.k8s.io/docs/handbook/accessing/)
+
+2. **Local forwarding** (using host ports):  
+   ```
+   kubectl port-forward svc/webapp-service 3000:3000
+   ```
+   - open http://localhost:3000 in browser
+   - port can be any host port, like 8080, or even 30100
