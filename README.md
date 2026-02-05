@@ -1,5 +1,6 @@
 # Kubernetes for Absolute Beginners
 
+Notes for video from [@TechWorldwithNana](https://www.youtube.com/@TechWorldwithNana):  
 > https://www.youtube.com/watch?v=s_o8dwzRlu4
 
 ## Kubernetes:  
@@ -26,7 +27,7 @@ Features:
 
 Virtual Network: is used to connect and isolate the control plane and worker nodes, plus any external clients and services, creating one unit that connects everything together
 
-Control-plane node (legacy: Master node):  
+Control-plane node (legacy name: Master node):  
 Contains several Kubernetes processes that are absolutely necessary to run a Cluster
   - **API Server**
     - is the entrypoint to the cluster
